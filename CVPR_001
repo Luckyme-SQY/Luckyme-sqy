@@ -1,0 +1,26 @@
+//入门小白，今天配了一上午环境加上执行导包
+//配置环境一定要仔细，空格，中英文标点符号都不能错
+//遇到错误，跟着队友一起慢慢解决
+
+import os,sys,glob,shutil,json
+os.environ["CUDA_VISIBLE_DEVICES"]='0'
+import cv2
+
+from PIL import Image
+import numpy as np
+
+from tqdm import tqdm,tqdm_notebook
+
+import torch
+torch.manual_seed(0)
+torch.backends.cudnn.deterministic=False
+torch.backends.cudnn.benchmark=True
+
+import torchvision.models as models
+import torchvision.transforms as transforms
+import torchvision.datasets as datasets
+import torch.nn as nn
+import torch.nn.functional as F
+import torch.optim as optim
+from torch.autograd import Variable
+from torch.utils.data.dataset import Dataset
